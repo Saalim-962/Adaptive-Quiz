@@ -60,12 +60,6 @@ $total_questions = mysqli_num_rows(mysqli_query($conn,$query));
 	</main>
 
 
-	<footer>
-			<div class="container">
-				Copyright &copy; ITSERIESTUTOR
-			</div>
 
-
-	</footer>
 </body>
 </html>
