@@ -46,7 +46,7 @@ $total_questions = mysqli_num_rows(mysqli_query($conn,$query));
 
 				</ul>
 
-				<a href="quiz.php?n=1&i=1&c=0" class="start">Start Now !</a> 
+				<a href="quiz.php?n=1&i=1&c=0" class="start">Start Now !</a> <!--Changed the parameters.>
 
 			</div>
 
