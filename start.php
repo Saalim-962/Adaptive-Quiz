@@ -1,15 +1,7 @@
-
 <?php
-    $host = "localhost";
-        $user = "root";
-        $pass = "";
-        $database = "adaptive-quiz";
-        $conn = mysqli_connect( $host, $user, $pass, $database);
-session_start(); 
-        if(!$conn)
-        {
-            die('Could not connect: '.mysqli_error($conn));
-        }
+include 'db.php';
+session_start();
+
 ?>
 <?php
 $msg= 'Welcome ' . $_SESSION['username'] . ' Good to see you !';
@@ -19,7 +11,8 @@ echo "<script type='text/javascript'>alert('$msg');</script>";
 ?>
 <?php
 
-$query = "SELECT * FROM easy";
+$conn = $con1;
+$query = "SELECT * FROM questions";
 $total_questions = mysqli_num_rows(mysqli_query($conn,$query));
 
 
