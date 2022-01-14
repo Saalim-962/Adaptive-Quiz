@@ -1,5 +1,5 @@
 <?php
-
+//do not change the conatin
 $dbhost ="localhost";
 $dbuser = "root";
 $dbpass = "Enter your database password here";
