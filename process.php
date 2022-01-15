@@ -73,7 +73,7 @@ session_start(); ?>
             }
             if($counter < 0)
             {
-                if($counter< 01 && $next_db != 1)
+                if($counter< 0 && $next_db != 1)
                 {
                     $next_db = 1;
                 }
