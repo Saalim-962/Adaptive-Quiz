@@ -51,6 +51,7 @@ session_start(); ?>
                 if($counter> 1 && $next_db !=2)
                 {
                     $next_db=2;
+                    $counter = 0;
                 }
                 elseif($counter> 1 && $next_db == 2)
                 {
@@ -76,6 +77,7 @@ session_start(); ?>
                 if($counter< 0 && $next_db != 1)
                 {
                     $next_db = 1;
+                    $counter = 0;
                 }
                 elseif($counter< 0 && $next_db == 1)
                 {
