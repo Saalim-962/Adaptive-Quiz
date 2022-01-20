@@ -20,7 +20,7 @@ $total_questions = mysqli_num_rows(mysqli_query($conn,$query));
 <html>
 <head>
 	<title>Adaptive Quiz</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style_start.css">
 </head>
 <body url="https://t4.ftcdn.net/jpg/04/39/13/37/360_F_439133763_FrLdhZsd5aGC23r9ATARuKJBr8ifZjIe.jpg">
 
