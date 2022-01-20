@@ -1,0 +1,58 @@
+body
+{
+    background-color: green;
+    padding: 10%;
+    text-align: center;
+}
+
+
+.container_body
+{
+    font-size: large;
+}
+
+.table-property
+{
+  border-collapse: collapse;
+  width: 94em;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 30em;
+  box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.15);
+  margin: 25px auto;
+}
+
+.table-property thead tr
+{
+  border-bottom: 1px dashed wheat;
+  font-size: 50px;
+  padding: 30px auto;
+  color: purple;
+}
+
+.table-property tbody
+{
+  font-size: 25px;
+}
+
+.t-1
+{
+  color: blue;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.t-2
+{
+  color: yellowgreen;
+}
+
+.t-3
+{
+  color: red;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.t-4
+{
+  color: cyan;
+}
