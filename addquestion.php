@@ -182,15 +182,14 @@ color:black;
 <body>
 
 <div class="topnav">
-  <a  href="#">About</a>
 
-  <a class="active" href="ticketlogin.php">Home </a>
+  <a class="active" href="adminhome.php">Home </a>
 </div>
 
 <ul>
   <li><a  href="adminhome.php">Home</a></li>
-  <li><a href="adminresult">View Result</a></li>
-  <li><a class="active" href="tick.php">Add Questions</a></li>
+  <li><a href="adminresult.php">View Result</a></li>
+  <li><a class="active" href="addquestion.php">Add Questions</a></li>
   <li><a href="logout.php">Logout</a></li>
 </ul>
 
