@@ -1,0 +1,26 @@
+.admin
+{
+    width: 350px;
+    height: 350px;
+    float: left;
+    margin-left: 150px;
+    margin-top: 75px;
+}
+.user
+{
+    width: 350px;
+    height: 350px;
+    float: right;
+    margin-right: 150px;
+    margin-top: 75px;
+}
+h1{
+    color: black;
+    font-size: 40px;
+    margin: 0ox;
+    background-color: lightsalmon;
+    text-align: center;
+}
+body{
+    background-color: lightseagreen;
+}
