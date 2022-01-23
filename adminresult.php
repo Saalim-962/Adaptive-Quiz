@@ -118,14 +118,14 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <body>
 
 <div class="topnav">
-  <a  href="#">About</a>
 
-  <a class="active" href="ticketlogin.php">Home </a>
+
+  <a class="active" href="adminhome.php">Home </a>
 </div>
 
 <ul>
-  <li><a href="#home">Home</a></li>
-  <li><a class="active" href="">View Result</a></li>
+  <li><a href="adminhoem.php">Home</a></li>
+  <li><a class="active" href="adminresult.php">View Result</a></li>
   <li><a href="addquestion.php">Add Questions</a></li>
   <li><a href="logout.php">Logout</a></li>
 </ul>
