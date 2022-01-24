@@ -3,7 +3,7 @@
 
 //connecting to database
 $connect=mysqli_connect("localhost","root","","demo") or die("connection failed");
-//applying logic
+
 
 ?>
 <!---form in html--->
