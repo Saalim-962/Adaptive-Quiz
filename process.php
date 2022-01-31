@@ -6,11 +6,12 @@ session_start(); ?>
     {
         $_SESSION['score'] = 0;
     }
-   
+
     if($_POST)
     {
         $number = $_POST['number'];
         $i = $_POST['i'];
+        $username = $_POST['username'];
         $counter = $_POST['c'];
         if($i == 1)
         {
@@ -22,7 +23,7 @@ session_start(); ?>
         }
         $next_db = $i;
         $selected_choice = $_POST['choice'];
-    
+
         $next = $number+1;
         $query1 = "select*from questions";
         $total_questions  =mysqli_num_rows(mysqli_query($conn,$query1));
@@ -34,7 +35,7 @@ session_start(); ?>
         $correct_choice = $row['ansid'];
 
         if($selected_choice == $correct_choice)
-        {            
+        {
             $counter++;
             $_SESSION['score']++;
             if ($counter >= 3)
@@ -51,14 +52,14 @@ session_start(); ?>
                 if($counter> 1 && $next_db !=2)
                 {
                     $next_db=2;
-                    $counter = 0;
+                    // $counter = 0;
                 }
                 elseif($counter> 1 && $next_db == 2)
                 {
                     $next_db = 2;
                 }
             }
-            
+
         }
 
         elseif($selected_choice != $correct_choice)
@@ -77,24 +78,23 @@ session_start(); ?>
                 if($counter< 0 && $next_db != 1)
                 {
                     $next_db = 1;
-                    $counter = 0;
+                    // $counter = 0;
                 }
                 elseif($counter< 0 && $next_db == 1)
                 {
                     $next_db = 1;
                 }
-            }   
+            }
         }
         if($number == $total_questions)
         {
-            header("LOCATION:score.php");
+          $score = $_SESSION['score'];
+            header("LOCATION: score.php? username=".$username."&score=".$score);
         }
         else{
-            header("LOCATION: quiz.php? n=".$next."&i=".$next_db."&c=".$counter);
+            header("LOCATION: quiz.php? n=".$next."&i=".$next_db."&c=".$counter."&username=".$username);
         }
     }
-    
+
 
  ?>
-
-
