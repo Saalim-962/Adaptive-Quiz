@@ -4,7 +4,8 @@ session_start();
 $conn = $con1;
 $query = "SELECT * FROM questions";
 $total_questions = mysqli_num_rows(mysqli_query($conn,$query));
-
+$username = $_GET['username'];
+$score = $_GET['score'];
 ?>
 
 
@@ -49,4 +50,11 @@ $total_questions = mysqli_num_rows(mysqli_query($conn,$query));
 
         </div>
     </body>
+    <?php
+    $conn1 = $con4;
+    // echo $username;
+    $sql = mysqli_query($conn1,"INSERT INTO score_data(score) VALUES($score)");
+
+     session_unset()
+     ?>
 </html>
