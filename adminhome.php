@@ -111,7 +111,6 @@ font-family:cambria;
 <ul>
   <li><a  class="active" href="adminhome.php">Home</a></li>
   <li><a href="adminresult.php">View Result</a></li>
-  <li><a href="addquestion.php">Add Questions</a></li>
   <li><a href="logout.php">Logout</a></li>
 </ul>
 
