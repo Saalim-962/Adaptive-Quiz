@@ -126,7 +126,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <ul>
   <li><a href="adminhoem.php">Home</a></li>
   <li><a class="active" href="adminresult.php">View Result</a></li>
-  <li><a href="addquestion.php">Add Questions</a></li>
+ 
   <li><a href="logout.php">Logout</a></li>
 </ul>
 <form action="adminresult.php" method="POST">
