@@ -1,13 +1,10 @@
 <?php
+<?php
+include 'db.php';
 session_start();
-?><?php
-$link = mysqli_connect("localhost", "root", "", "adaptive-quiz");
- 
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+$conn = $con3;
+$new_conn = $con4;
 ?>
-
  <html>
 <head>
 <title>Admin Page</title>
@@ -148,17 +145,24 @@ if($result = mysqli_query($link, $sql)){
                 echo "<th>Name</th>";
 	 echo "<th>Username</th>";
                 echo "<th>Password</th>";
-                echo "<th>Email</th>";
+                echo "<th>Score</th>";
          
 
             echo "</tr>";
         while($row = mysqli_fetch_array($result)){
+          $username_query = "SELECT * FROM userinfo";
+          $password_query= "SELECT * FROM userinfo";
+          $print_score = "SELECT * FROM score_data";
+          $username_row= mysqli_query($conn,$username_query);
+          $password_row =mysqli_query($conn,$password_query);
+          $score_row = mysqli_query($new_conn,$print_score);
+          $col1 = mysqli_fetch_assoc($username_row);
+          $col2 = mysqli_fetch_assoc($password_row);
+          $col3 = mysqli_fetch_assoc($score_row);
             echo "<tr>";
-                echo "<td>" . $row['name'] . "</td>";
-echo "<td>" . $row['password'] . "</td>";
-                echo "<td>" . $row['username'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
-       
+                echo "<td>" . $col1['username'] . "</td>";
+                echo "<td>" . $col2['password'] . "</td>";
+                echo "<td>" . $col3['score'] . "</td>";
             echo "</tr>";
         }
         echo "</table>";
@@ -166,10 +170,12 @@ echo "<td>" . $row['password'] . "</td>";
     } else{
         echo "No records matching your query were found.";
     }
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+    echo "ERROR: Could not able to execute $score. " . mysqli_error($new_conn);
 } }
 
-mysqli_close($link);
+mysqli_close($conn);
+mysqli_close($new_conn);
 ?>
 </html>
