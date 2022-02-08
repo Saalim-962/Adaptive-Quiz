@@ -1,0 +1,113 @@
+<html>
+</head>
+<head>
+<title>User Login</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+.fa {
+  padding: 5px;
+  font-size: 18px;
+  width: 10px;
+  text-align: center;
+  text-decoration: none;
+float:center;
+cursor:pointer;
+background-color:black;
+}
+
+.fa-google {
+  background: transparent;
+  color: white;
+}
+
+body{
+background:url('https://i.pinimg.com/736x/43/c4/47/43c4477d6760cb0ad791eee55b0b2278.jpg');
+width:100%;	
+background-size:cover;
+}
+div.login {
+  margin: 50px 150px ;
+  border: 2px solid black;
+height:450px;
+position:absolute;
+  width: 200px;
+padding: 10px ;
+opacity:.9;
+width:70%;
+background:url('quiz.png');
+background-size:cover;
+}
+div.login content{
+color:white;
+margin: 0px 600px ;
+text-align:center;
+position:absolute;
+font-family:Cambria;
+}
+div.login img {
+  width: 100%;
+  height: 80%;
+margin: 0px 50px;
+width:100px;
+border-radius:50%;
+}
+
+div.login input{
+border-bottom: 1px solid black;
+background : transparent;
+font-size:16px;
+margin-left:10px;
+font-family:Cambria;
+}
+hea{
+font-family: 'Exo', 'sans-serif';
+color: #4d88ff;
+font-syle:bold;
+font-size: 35px;
+	font-weight: 200}
+div.login input[type=text]
+{
+color:white;
+}
+div.login input[type=password]
+{
+color:white;
+}
+div.login input[type=submit]{
+width:140px;
+font-size:16px;
+padding:5px 15px;
+border:2px solid white;
+border-radius:10%;
+background-color:black;
+color:white;
+cursor:pointer;
+}
+ div.login input[type=submit]:hover
+{
+color:black;
+border:2px solid black;
+background-color:white;
+}
+</style>
+<body>
+<form name="form" action="userlogin.php" method="POST">
+<div class="login">
+<content>
+<hea> Sign Up</hea>
+<h3>   Name</h3>
+<input type="text"  placeholder="Enter Name" name="myname">
+<h3>   Username</h3>
+<input type="text"  placeholder="Enter username" name="myusername">
+<h3> Password</h3>
+<input type="password" placeholder="Enter password" name="mypassword"><p>	
+<h3> Email</h3>
+<input type="text" placeholder="Enter Email" name="myemail"><p>
+<input type="submit" name="login" value="SignUp">
+<p>Or Continue with 
+<i class="fa fa-google"></i></p></content></div>
+</form>
+</body>
+
+</html>
