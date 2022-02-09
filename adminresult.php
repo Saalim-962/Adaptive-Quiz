@@ -1,11 +1,11 @@
 <?php
-<?php
 include 'db.php';
 session_start();
 $conn = $con3;
 $new_conn = $con4;
 ?>
- <html>
+
+<html>
 <head>
 <title>Admin Page</title>
 </head>
@@ -32,13 +32,19 @@ opacity:0.8;
 input
 {
 font-size:25px;
-border-radius:10%;	
+border-radius:10%;
 font-family:cambria;
 margin-left:500px;
 margin-right:18px;
 color:white;
-background-color:brown;
+background-color:Aquamarine;
 }
+
+input:hover
+{
+  background-color: Turquoise;
+}
+
 li a {
   display: block;
   color: #000;
@@ -56,7 +62,7 @@ li a:hover:not(.active) {
   color: white;
 }
 .topnav {
-  overflow: hidden;	
+  overflow: hidden;
   background-color: transparent;
 width:100%;
 float:right;
@@ -98,17 +104,19 @@ th {
   padding-bottom: 12px;
 font-size:15px;
   text-align: center;
-  background-color: brown;
+  background-color: DodgerBlue;
   color: white;
 }
 td {
   text-align: center;
   padding: 8px;
 }
-tr:hover {background-color: #ddd;}
-
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr
+{
+  background-color: white;
 }
+
+
 
 </style>
 
@@ -121,38 +129,39 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 </div>
 
 <ul>
-  <li><a href="adminhoem.php">Home</a></li>
+  <li><a href="adminhome.php">Home</a></li>
   <li><a class="active" href="adminresult.php">View Result</a></li>
- 
+
   <li><a href="logout.php">Logout</a></li>
 </ul>
 <form action="adminresult.php" method="POST">
 <input type="submit" class=" w3-hover-green w3-btn w3-white w3-border" value="View Result" name="submit"></div>
 </form>
 </body>
-<?php 
+<?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
  if(isset($_POST["submit"]))
-    
+
 {
 
-$sql = "SELECT * FROM register";
-if($result = mysqli_query($link, $sql)){
+$sql = "SELECT * FROM userinfo";
+if($result = mysqli_query($conn, $sql))
+{
     if(mysqli_num_rows($result) > 0){
         echo "<table>";
             echo "<tr>";
-                echo "<th>Name</th>";
 	 echo "<th>Username</th>";
-                echo "<th>Password</th>";
+                echo "<th>Email</th>";
                 echo "<th>Score</th>";
-         
+
 
             echo "</tr>";
-        while($row = mysqli_fetch_array($result)){
-          $username_query = "SELECT * FROM userinfo";
-          $password_query= "SELECT * FROM userinfo";
-          $print_score = "SELECT * FROM score_data";
+            $i = 1;
+        while($i <= mysqli_num_rows($result)){
+          $username_query = "SELECT * FROM userinfo where id=$i";
+          $password_query= "SELECT * FROM userinfo where id=$i";
+          $print_score = "SELECT * FROM score_data where id=$i";
           $username_row= mysqli_query($conn,$username_query);
           $password_row =mysqli_query($conn,$password_query);
           $score_row = mysqli_query($new_conn,$print_score);
@@ -161,16 +170,17 @@ if($result = mysqli_query($link, $sql)){
           $col3 = mysqli_fetch_assoc($score_row);
             echo "<tr>";
                 echo "<td>" . $col1['username'] . "</td>";
-                echo "<td>" . $col2['password'] . "</td>";
+                echo "<td>" . $col2['email'] . "</td>";
                 echo "<td>" . $col3['score'] . "</td>";
             echo "</tr>";
+            $i = $i+1;
         }
         echo "</table>";
-       
+
     } else{
         echo "No records matching your query were found.";
     }
-}else{
+} else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
     echo "ERROR: Could not able to execute $score. " . mysqli_error($new_conn);
 } }
